@@ -19,6 +19,8 @@ let guardDirection = 1;
 
 const PLAYER_SIZE = 48;
 
+let images = {};
+
 let animIndex = 0;
 let frameNo = 0;
 let animSpeed = 0.1;
@@ -28,7 +30,7 @@ let font;
 function preload() {
   partyConnect(
     "wss://demoserver.p5party.org",
-    "heist-escape-final"
+    "heist-escape-latest"
   );
 
   p1sharedX = partyLoadShared("p1sharedX", { x: 385 });
@@ -48,10 +50,9 @@ function preload() {
   ]);
 
   shared = partyLoadShared("globals", {
-    gameState: "playing", // intro, playing, end
+    gameState: "intro", // intro, playing, end
     startTime: Date.now(),
     displayTime: 5,
-    detected: false,
   });
 
   me = partyLoadMyShared();

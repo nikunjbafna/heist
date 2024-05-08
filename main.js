@@ -23,6 +23,8 @@ let animIndex = 0;
 let frameNo = 0;
 let animSpeed = 0.1;
 
+let font;
+
 function preload() {
   partyConnect(
     "wss://demoserver.p5party.org",
@@ -137,7 +139,7 @@ function setup() {
   security.layer = 2;
   joint.layer = 2;
 
-  textFont(font);;
+  textFont(font);
   textAlign(CENTER);
   fill(255);
 }
